@@ -1,1 +1,1125 @@
 
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'érable Normand - Gîte de charme en Normandie</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Raleway', sans-serif;
+            color: #333;
+            background-color: #f9f7f4;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero-pattern {
+            background-color: #f9f7f4;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4c8b8' fill-opacity='0.2'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .btn-primary {
+            background-color: #5d8c3e;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #4a7032;
+            transform: translateY(-2px);
+        }
+        
+        .gallery-img {
+            height: 250px;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-img:hover {
+            transform: scale(1.03);
+        }
+        
+        .testimonial {
+            background-color: #fff;
+            border-left: 4px solid #5d8c3e;
+        }
+        
+        .feature-icon {
+            color: #5d8c3e;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #5d8c3e;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .maple-leaf {
+            fill: #5d8c3e;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <svg class="w-8 h-8 maple-leaf" viewBox="0 0 24 24">
+                    <path d="M21,15H16.5C16.5,15 17,14 17,12C17,10 16.5,9 16.5,9H21L18,3H14C14,3 14,4 12,4C10,4 10,3 10,3H6L3,9H7.5C7.5,9 7,10 7,12C7,14 7.5,15 7.5,15H3L6,21H10C10,21 10,20 12,20C14,20 14,21 14,21H18L21,15Z" />
+                </svg>
+                <span class="text-xl font-bold text-gray-800">L'érable Normand</span>
+            </div>
+            
+            <div class="hidden md:flex space-x-8">
+                <a href="#accueil" class="nav-link text-gray-700 hover:text-gray-900">Accueil</a>
+                <a href="#gite" class="nav-link text-gray-700 hover:text-gray-900">Le Gîte</a>
+                <a href="#services" class="nav-link text-gray-700 hover:text-gray-900">Services</a>
+                <a href="#galerie" class="nav-link text-gray-700 hover:text-gray-900">Galerie</a>
+                <a href="#tarifs" class="nav-link text-gray-700 hover:text-gray-900">Tarifs</a>
+                <a href="#contact" class="nav-link text-gray-700 hover:text-gray-900">Contact</a>
+            </div>
+            
+            <div class="md:hidden">
+                <button id="menu-toggle" class="focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="#accueil" class="py-2 text-gray-700 hover:text-gray-900">Accueil</a>
+                <a href="#gite" class="py-2 text-gray-700 hover:text-gray-900">Le Gîte</a>
+                <a href="#services" class="py-2 text-gray-700 hover:text-gray-900">Services</a>
+                <a href="#galerie" class="py-2 text-gray-700 hover:text-gray-900">Galerie</a>
+                <a href="#tarifs" class="py-2 text-gray-700 hover:text-gray-900">Tarifs</a>
+                <a href="#contact" class="py-2 text-gray-700 hover:text-gray-900">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero-pattern">
+        <div class="container mx-auto px-4 py-20 md:py-32 flex flex-col items-center">
+            <h1 class="text-4xl md:text-6xl font-bold text-center mb-6">Bienvenue à L'érable Normand</h1>
+            <p class="text-xl md:text-2xl text-center text-gray-700 max-w-3xl mb-10">
+                Un havre de paix au cœur de la Normandie, où tradition et confort se rencontrent pour vous offrir un séjour inoubliable.
+            </p>
+            <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="#contact" class="btn-primary text-white font-semibold px-8 py-3 rounded-lg text-center shadow-lg">
+                    Réserver maintenant
+                </a>
+                <a href="#gite" class="bg-white text-gray-800 font-semibold px-8 py-3 rounded-lg text-center shadow border border-gray-300 hover:bg-gray-50 transition">
+                    Découvrir le gîte
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="gite" class="bg-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <svg class="w-16 h-16 maple-leaf mb-6" viewBox="0 0 24 24">
+                        <path d="M21,15H16.5C16.5,15 17,14 17,12C17,10 16.5,9 16.5,9H21L18,3H14C14,3 14,4 12,4C10,4 10,3 10,3H6L3,9H7.5C7.5,9 7,10 7,12C7,14 7.5,15 7.5,15H3L6,21H10C10,21 10,20 12,20C14,20 14,21 14,21H18L21,15Z" />
+                    </svg>
+                    <h2 class="text-3xl font-bold mb-6">Notre Gîte de Charme</h2>
+                    <p class="text-gray-700 mb-4">
+                        Niché dans un écrin de verdure typiquement normand, L'érable Normand est une demeure traditionnelle restaurée avec soin pour préserver son authenticité tout en offrant le confort moderne.
+                    </p>
+                    <p class="text-gray-700 mb-4">
+                        Avec ses poutres apparentes, son mobilier de caractère et son ambiance chaleureuse, notre gîte vous invite à découvrir l'art de vivre normand dans un cadre paisible et ressourçant.
+                    </p>
+                    <p class="text-gray-700 mb-6">
+                        Idéalement situé pour explorer les trésors de la Normandie, vous pourrez visiter les plages du débarquement, le Mont-Saint-Michel, ou simplement vous promener dans notre jardin arboré et profiter de la campagne environnante.
+                    </p>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-yellow-500">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </span>
+                        <span class="text-gray-700">5.0 - Plus de 50 avis</span>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="relative rounded-lg overflow-hidden shadow-xl">
+                        <svg class="w-full h-auto" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="800" height="600" fill="#e6d7c3" />
+                            <path d="M0,0 L800,0 L800,400 L0,400 Z" fill="#8b5a2b" />
+                            <rect x="50" y="50" width="700" height="300" fill="#d7b889" />
+                            <rect x="100" y="100" width="250" height="200" fill="#4a7032" />
+                            <rect x="450" y="100" width="250" height="200" fill="#4a7032" />
+                            <path d="M0,400 L800,400 L800,600 L0,600 Z" fill="#7d9c5b" />
+                            <path d="M350,50 L450,50 L450,150 L350,150 Z" fill="#8b5a2b" />
+                            <path d="M300,0 L500,0 L400,-100 Z" fill="#8b5a2b" />
+                            <circle cx="400" cy="500" r="50" fill="#8b5a2b" />
+                            <rect x="375" y="450" width="50" height="50" fill="#8b5a2b" />
+                            <path d="M300,450 C300,400 500,400 500,450" stroke="#8b5a2b" stroke-width="5" fill="none" />
+                            <path d="M350,100 C350,75 450,75 450,100" stroke="#d7b889" stroke-width="5" fill="none" />
+                        </svg>
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
+                            <p class="text-white text-lg font-semibold">L'érable Normand - Vue extérieure</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="services" class="bg-gray-50 py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Nos Services et Équipements</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-4xl feature-icon mb-4">
+                        <i class="fas fa-bed"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Chambres Confortables</h3>
+                    <p class="text-gray-700">
+                        Nos chambres spacieuses sont équipées de literie de qualité pour vous garantir un sommeil réparateur après vos journées d'exploration.
+                    </p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-4xl feature-icon mb-4">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">WiFi Gratuit</h3>
+                    <p class="text-gray-700">
+                        Restez connecté pendant votre séjour grâce à notre connexion WiFi haut débit disponible dans tout le gîte.
+                    </p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-4xl feature-icon mb-4">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Cuisine Équipée</h3>
+                    <p class="text-gray-700">
+                        Préparez vos repas dans notre cuisine moderne entièrement équipée avec des appareils de qualité.
+                    </p>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-4xl feature-icon mb-4">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Jardin Arboré</h3>
+                    <p class="text-gray-700">
+                        Profitez de notre grand jardin paisible, parfait pour se détendre ou prendre un repas en plein air.
+                    </p>
+                </div>
+                
+                <!-- Feature 5 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-4xl feature-icon mb-4">
+                        <i class="fas fa-parking"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Parking Privé</h3>
+                    <p class="text-gray-700">
+                        Stationnez en toute sécurité dans notre parking privé gratuit à disposition de tous nos hôtes.
+                    </p>
+                </div>
+                
+                <!-- Feature 6 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-4xl feature-icon mb-4">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Cheminée</h3>
+                    <p class="text-gray-700">
+                        Réchauffez-vous près de notre cheminée traditionnelle lors des soirées fraîches pour une ambiance cosy.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="galerie" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Galerie</h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Image 1 -->
+                <div class="overflow-hidden rounded-lg shadow-md">
+                    <svg class="gallery-img w-full" viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="400" height="250" fill="#e6d7c3" />
+                        <rect x="20" y="20" width="360" height="210" fill="#d7b889" />
+                        <rect x="40" y="40" width="320" height="170" fill="#8b5a2b" />
+                        <rect x="60" y="60" width="280" height="130" fill="#d7b889" />
+                        <rect x="100" y="80" width="80" height="90" fill="#4a7032" />
+                        <rect x="220" y="80" width="80" height="90" fill="#4a7032" />
+                        <path d="M190,120 L210,120 L210,170 L190,170 Z" fill="#8b5a2b" />
+                    </svg>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg">Salon avec cheminée</h3>
+                    </div>
+                </div>
+                
+                <!-- Image 2 -->
+                <div class="overflow-hidden rounded-lg shadow-md">
+                    <svg class="gallery-img w-full" viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="400" height="250" fill="#f5efe6" />
+                        <rect x="20" y="20" width="360" height="210" fill="#e6d7c3" />
+                        <rect x="50" y="50" width="300" height="150" fill="#d7b889" />
+                        <rect x="70" y="70" width="260" height="110" fill="#f5efe6" />
+                        <rect x="100" y="100" width="200" height="80" fill="#8b5a2b" />
+                        <rect x="120" y="120" width="160" height="40" fill="#f5efe6" />
+                        <circle cx="200" cy="140" r="10" fill="#4a7032" />
+                    </svg>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg">Chambre principale</h3>
+                    </div>
+                </div>
+                
+                <!-- Image 3 -->
+                <div class="overflow-hidden rounded-lg shadow-md">
+                    <svg class="gallery-img w-full" viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="400" height="250" fill="#e6d7c3" />
+                        <rect x="20" y="20" width="360" height="210" fill="#f5efe6" />
+                        <rect x="50" y="50" width="150" height="150" fill="#d7b889" />
+                        <rect x="220" y="50" width="130" height="150" fill="#d7b889" />
+                        <rect x="70" y="70" width="110" height="110" fill="#8b5a2b" />
+                        <rect x="240" y="70" width="90" height="110" fill="#8b5a2b" />
+                        <circle cx="125" cy="125" r="30" fill="#f5efe6" />
+                        <circle cx="285" cy="125" r="20" fill="#f5efe6" />
+                    </svg>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg">Cuisine équipée</h3>
+                    </div>
+                </div>
+                
+                <!-- Image 4 -->
+                <div class="overflow-hidden rounded-lg shadow-md">
+                    <svg class="gallery-img w-full" viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="400" height="250" fill="#7d9c5b" />
+                        <path d="M0,100 Q200,150 400,100 L400,250 L0,250 Z" fill="#5d8c3e" />
+                        <circle cx="100" cy="80" r="40" fill="#8b5a2b" />
+                        <path d="M60,80 Q100,0 140,80" fill="none" stroke="#8b5a2b" stroke-width="10" />
+                        <circle cx="300" cy="60" r="30" fill="#8b5a2b" />
+                        <path d="M270,60 Q300,0 330,60" fill="none" stroke="#8b5a2b" stroke-width="8" />
+                        <rect x="150" y="150" width="100" height="100" fill="#d7b889" />
+                        <rect x="170" y="170" width="60" height="80" fill="#8b5a2b" />
+                    </svg>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg">Jardin et terrasse</h3>
+                    </div>
+                </div>
+                
+                <!-- Image 5 -->
+                <div class="overflow-hidden rounded-lg shadow-md">
+                    <svg class="gallery-img w-full" viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="400" height="250" fill="#f5efe6" />
+                        <rect x="20" y="20" width="360" height="210" fill="#e6d7c3" />
+                        <circle cx="200" cy="125" r="80" fill="#d7b889" />
+                        <circle cx="200" cy="125" r="60" fill="#f5efe6" />
+                        <rect x="140" y="65" width="120" height="120" fill="#f5efe6" />
+                        <rect x="170" y="95" width="60" height="60" fill="#8b5a2b" />
+                    </svg>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg">Salle de bain</h3>
+                    </div>
+                </div>
+                
+                <!-- Image 6 -->
+                <div class="overflow-hidden rounded-lg shadow-md">
+                    <svg class="gallery-img w-full" viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="400" height="250" fill="#7d9c5b" />
+                        <rect x="0" y="150" width="400" height="100" fill="#5d8c3e" />
+                        <rect x="100" y="50" width="200" height="150" fill="#d7b889" />
+                        <rect x="120" y="70" width="70" height="70" fill="#8b5a2b" />
+                        <rect x="210" y="70" width="70" height="70" fill="#8b5a2b" />
+                        <rect x="150" y="150" width="100" height="50" fill="#8b5a2b" />
+                        <path d="M100,50 L300,50 L200,10 Z" fill="#8b5a2b" />
+                    </svg>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg">Vue extérieure</h3>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-10">
+                <button id="view-more" class="btn-primary text-white font-semibold px-6 py-3 rounded-lg shadow-lg">
+                    Voir plus de photos
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Ce que disent nos clients</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-500 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-gray-700">5.0</span>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        "Un séjour merveilleux dans ce gîte plein de charme. L'accueil était chaleureux et les équipements parfaits. Nous avons particulièrement apprécié la cheminée et le jardin."
+                    </p>
+                    <div class="font-semibold">Marie et Pierre, Paris</div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-500 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-gray-700">5.0</span>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        "Idéalement situé pour visiter la région, ce gîte est un véritable havre de paix. La décoration est soignée et l'ambiance très cosy. Nous reviendrons !"
+                    </p>
+                    <div class="font-semibold">Sophie et Jean, Lyon</div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-500 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-gray-700">5.0</span>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        "Un endroit magnifique où nous avons passé une semaine en famille. Les enfants ont adoré le jardin et nous avons apprécié le calme et le confort du gîte."
+                    </p>
+                    <div class="font-semibold">Famille Dupont, Bordeaux</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="tarifs" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Nos Tarifs</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Low Season -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden shadow-md transition-transform hover:shadow-lg hover:-translate-y-1">
+                    <div class="bg-gray-50 p-6 border-b">
+                        <h3 class="text-xl font-bold mb-2">Basse Saison</h3>
+                        <p class="text-gray-600">Octobre à Mars (hors vacances)</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-center mb-6">
+                            <span class="text-4xl font-bold">90€</span>
+                            <span class="text-gray-600">/nuit</span>
+                        </div>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Minimum 2 nuits</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Semaine: 560€</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Charges incluses</span>
+                            </li>
+                        </ul>
+                        <a href="#contact" class="block text-center bg-white border border-gray-300 text-gray-800 font-semibold px-6 py-3 rounded-lg hover:bg-gray-50 transition">
+                            Réserver
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- High Season -->
+                <div class="border border-green-200 rounded-lg overflow-hidden shadow-md transform scale-105 z-10">
+                    <div class="bg-green-50 p-6 border-b border-green-200 relative">
+                        <div class="absolute top-0 right-0 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-bl">
+                            POPULAIRE
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Haute Saison</h3>
+                        <p class="text-gray-600">Juillet et Août</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-center mb-6">
+                            <span class="text-4xl font-bold">120€</span>
+                            <span class="text-gray-600">/nuit</span>
+                        </div>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Minimum 7 nuits</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Semaine: 790€</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Charges incluses</span>
+                            </li>
+                        </ul>
+                        <a href="#contact" class="block text-center btn-primary text-white font-semibold px-6 py-3 rounded-lg shadow-lg">
+                            Réserver
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Mid Season -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden shadow-md transition-transform hover:shadow-lg hover:-translate-y-1">
+                    <div class="bg-gray-50 p-6 border-b">
+                        <h3 class="text-xl font-bold mb-2">Moyenne Saison</h3>
+                        <p class="text-gray-600">Avril à Juin, Septembre</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-center mb-6">
+                            <span class="text-4xl font-bold">105€</span>
+                            <span class="text-gray-600">/nuit</span>
+                        </div>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Minimum 3 nuits</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Semaine: 650€</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Charges incluses</span>
+                            </li>
+                        </ul>
+                        <a href="#contact" class="block text-center bg-white border border-gray-300 text-gray-800 font-semibold px-6 py-3 rounded-lg hover:bg-gray-50 transition">
+                            Réserver
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 p-6 bg-gray-50 rounded-lg shadow-md">
+                <h3 class="text-xl font-bold mb-4">Informations complémentaires</h3>
+                <ul class="space-y-2">
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 mr-2 text-green-500 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span>Taxe de séjour : 1,50€ par adulte et par nuit</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 mr-2 text-green-500 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span>Caution : 300€ (restituée après état des lieux)</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 mr-2 text-green-500 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span>Option ménage fin de séjour : 60€</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 mr-2 text-green-500 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span>Animaux acceptés : supplément de 5€/jour (max 2 animaux)</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map & Location -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Notre Localisation</h2>
+            
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="md:w-1/2">
+                    <div class="bg-white p-6 rounded-lg shadow-md h-full">
+                        <h3 class="text-xl font-bold mb-4">Découvrez la Normandie</h3>
+                        <p class="text-gray-700 mb-4">
+                            L'érable Normand est idéalement situé pour explorer les merveilles de la Normandie. À proximité, vous pourrez découvrir :
+                        </p>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 mr-2 text-green-500 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Les plages du débarquement (45 min)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 mr-2 text-green-500 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Le Mont-Saint-Michel (1h15)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 mr-2 text-green-500 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Bayeux et sa tapisserie (30 min)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 mr-2 text-green-500 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Honfleur et Deauville (1h)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 mr-2 text-green-500 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>La Suisse Normande (20 min)</span>
+                            </li>
+                        </ul>
+                        <p class="text-gray-700">
+                            À proximité immédiate, vous trouverez des commerces, restaurants et marchés locaux pour découvrir les produits du terroir normand.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden h-full">
+                        <div class="p-6 border-b">
+                            <h3 class="text-xl font-bold mb-2">Notre adresse</h3>
+                            <p class="text-gray-700">
+                                L'érable Normand<br>
+                                123 Route des Pommiers<br>
+                                14000 Région Normande<br>
+                                France
+                            </p>
+                        </div>
+                        <div class="h-64 bg-gray-200 relative">
+                            <!-- Map placeholder -->
+                            <svg class="w-full h-full" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="600" height="400" fill="#e6e6e6" />
+                                
+                                <!-- Roads -->
+                                <path d="M0,200 L600,200" stroke="#ffffff" stroke-width="20" />
+                                <path d="M300,0 L300,400" stroke="#ffffff" stroke-width="15" />
+                                <path d="M150,100 L450,300" stroke="#ffffff" stroke-width="10" />
+                                <path d="M450,100 L150,300" stroke="#ffffff" stroke-width="10" />
+                                
+                                <!-- Green areas -->
+                                <rect x="50" y="50" width="100" height="100" fill="#7d9c5b" rx="10" />
+                                <rect x="450" y="50" width="100" height="100" fill="#7d9c5b" rx="10" />
+                                <rect x="50" y="250" width="100" height="100" fill="#7d9c5b" rx="10" />
+                                <rect x="450" y="250" width="100" height="100" fill="#7d9c5b" rx="10" />
+                                
+                                <!-- Water -->
+                                <rect x="200" y="300" width="200" height="80" fill="#a4c8e1" rx="10" />
+                                
+                                <!-- Location marker -->
+                                <circle cx="300" cy="200" r="15" fill="#5d8c3e" />
+                                <circle cx="300" cy="200" r="7" fill="#ffffff" />
+                                
+                                <!-- Text -->
+                                <text x="300" y="170" font-family="Arial" font-size="14" text-anchor="middle" fill="#333333" font-weight="bold">L'érable Normand</text>
+                            </svg>
+                            <div class="absolute bottom-0 left-0 right-0 bg-white bg-opacity-80 p-3 text-center">
+                                <p class="text-sm">Carte interactive disponible sur place</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Contactez-nous</h2>
+            
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="md:w-1/2">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md h-full">
+                        <h3 class="text-xl font-bold mb-4">Informations de contact</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <div class="text-green-600 mr-3 mt-1">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold">Téléphone</p>
+                                    <p class="text-gray-700">+33 (0)2 31 XX XX XX</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="text-green-600 mr-3 mt-1">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold">Email</p>
+                                    <p class="text-gray-700">contact@erablenormand.fr</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="text-green-600 mr-3 mt-1">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold">Horaires d'accueil</p>
+                                    <p class="text-gray-700">Arrivée : 16h-20h<br>Départ : avant 10h</p>
+                                    <p class="text-gray-700 text-sm mt-1">(Autres horaires sur demande)</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="text-green-600 mr-3 mt-1">
+                                    <i class="fas fa-info-circle"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold">Réservation</p>
+                                    <p class="text-gray-700">Acompte de 30% à la réservation<br>Solde 30 jours avant l'arrivée</p>
+                                </div>
+                            </li>
+                        </ul>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-semibold mb-3">Suivez-nous</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="text-gray-700 hover:text-green-600 transition">
+                                    <i class="fab fa-facebook-f text-xl"></i>
+                                </a>
+                                <a href="#" class="text-gray-700 hover:text-green-600 transition">
+                                    <i class="fab fa-instagram text-xl"></i>
+                                </a>
+                                <a href="#" class="text-gray-700 hover:text-green-600 transition">
+                                    <i class="fab fa-tripadvisor text-xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <form id="contact-form" class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Nom</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" required>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" required>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="phone" class="block text-gray-700 font-medium mb-2">Téléphone</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="dates" class="block text-gray-700 font-medium mb-2">Dates souhaitées</label>
+                            <div class="flex space-x-4">
+                                <div class="w-1/2">
+                                    <label for="arrival" class="block text-gray-700 text-sm mb-1">Arrivée</label>
+                                    <input type="date" id="arrival" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                                </div>
+                                <div class="w-1/2">
+                                    <label for="departure" class="block text-gray-700 text-sm mb-1">Départ</label>
+                                    <input type="date" id="departure" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="guests" class="block text-gray-700 font-medium mb-2">Nombre de personnes</label>
+                            <select id="guests" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                                <option value="1">1 personne</option>
+                                <option value="2" selected>2 personnes</option>
+                                <option value="3">3 personnes</option>
+                                <option value="4">4 personnes</option>
+                                <option value="5">5 personnes</option>
+                                <option value="6">6 personnes</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full btn-primary text-white font-semibold px-6 py-3 rounded-lg shadow-lg">
+                            Envoyer ma demande
+                        </button>
+                        
+                        <p class="text-sm text-gray-600 mt-4 text-center">
+                            Nous vous répondrons dans les plus brefs délais.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-8 md:mb-0">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <svg class="w-8 h-8" viewBox="0 0 24 24" fill="white">
+                            <path d="M21,15H16.5C16.5,15 17,14 17,12C17,10 16.5,9 16.5,9H21L18,3H14C14,3 14,4 12,4C10,4 10,3 10,3H6L3,9H7.5C7.5,9 7,10 7,12C7,14 7.5,15 7.5,15H3L6,21H10C10,21 10,20 12,20C14,20 14,21 14,21H18L21,15Z" />
+                        </svg>
+                        <span class="text-xl font-bold">L'érable Normand</span>
+                    </div>
+                    <p class="text-gray-400 max-w-xs">
+                        Un gîte de charme au cœur de la Normandie pour des vacances authentiques et ressourçantes.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Liens rapides</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#accueil" class="text-gray-400 hover:text-white transition">Accueil</a></li>
+                            <li><a href="#gite" class="text-gray-400 hover:text-white transition">Le Gîte</a></li>
+                            <li><a href="#services" class="text-gray-400 hover:text-white transition">Services</a></li>
+                            <li><a href="#galerie" class="text-gray-400 hover:text-white transition">Galerie</a></li>
+                            <li><a href="#tarifs" class="text-gray-400 hover:text-white transition">Tarifs</a></li>
+                            <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Informations</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Conditions générales</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Politique de confidentialité</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">FAQ</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Accessibilité</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="col-span-2 md:col-span-1">
+                        <h3 class="text-lg font-semibold mb-4">Newsletter</h3>
+                        <p class="text-gray-400 mb-4">Recevez nos offres spéciales</p>
+                        <form class="flex">
+                            <input type="email" placeholder="Votre email" class="px-4 py-2 rounded-l-lg focus:outline-none flex-grow text-gray-800">
+                            <button type="submit" class="bg-green-600 hover:bg-green-700 px-4 py-2 rounded-r-lg transition">
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">
+                    &copy; 2023 L'érable Normand. Tous droits réservés.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-tripadvisor"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Booking Modal -->
+    <div id="booking-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden">
+        <div class="bg-white rounded-lg shadow-xl max-w-md w-full mx-4">
+            <div class="p-6 border-b">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-xl font-bold">Réservation rapide</h3>
+                    <button id="close-modal" class="text-gray-500 hover:text-gray-700">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="p-6">
+                <form id="booking-form">
+                    <div class="mb-4">
+                        <label for="modal-dates" class="block text-gray-700 font-medium mb-2">Dates de séjour</label>
+                        <div class="flex space-x-4">
+                            <div class="w-1/2">
+                                <label for="modal-arrival" class="block text-gray-700 text-sm mb-1">Arrivée</label>
+                                <input type="date" id="modal-arrival" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" required>
+                            </div>
+                            <div class="w-1/2">
+                                <label for="modal-departure" class="block text-gray-700 text-sm mb-1">Départ</label>
+                                <input type="date" id="modal-departure" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="modal-guests" class="block text-gray-700 font-medium mb-2">Nombre de personnes</label>
+                        <select id="modal-guests" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" required>
+                            <option value="1">1 personne</option>
+                            <option value="2" selected>2 personnes</option>
+                            <option value="3">3 personnes</option>
+                            <option value="4">4 personnes</option>
+                            <option value="5">5 personnes</option>
+                            <option value="6">6 personnes</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="modal-name" class="block text-gray-700 font-medium mb-2">Nom complet</label>
+                        <input type="text" id="modal-name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" required>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="modal-email" class="block text-gray-700 font-medium mb-2">Email</label>
+                        <input type="email" id="modal-email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" required>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label for="modal-phone" class="block text-gray-700 font-medium mb-2">Téléphone</label>
+                        <input type="tel" id="modal-phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" required>
+                    </div>
+                    
+                    <button type="submit" class="w-full btn-primary text-white font-semibold px-6 py-3 rounded-lg shadow-lg">
+                        Vérifier la disponibilité
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookie Consent -->
+    <div id="cookie-consent" class="fixed bottom-0 left-0 right-0 bg-white shadow-lg p-4 z-40">
+        <div class="container mx-auto flex flex-col sm:flex-row items-center justify-between">
+            <div class="mb-4 sm:mb-0 sm:mr-8">
+                <p class="text-gray-700">
+                    Nous utilisons des cookies pour améliorer votre expérience sur notre site. 
+                    <a href="#" class="text-green-600 hover:underline">En savoir plus</a>
+                </p>
+            </div>
+            <div class="flex space-x-4">
+                <button id="accept-cookies" class="btn-primary text-white font-semibold px-6 py-2 rounded-lg shadow-lg">
+                    Accepter
+                </button>
+                <button id="decline-cookies" class="bg-white border border-gray-300 text-gray-800 font-semibold px-6 py-2 rounded-lg hover:bg-gray-50 transition">
+                    Refuser
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 bg-green-600 text-white rounded-full p-3 shadow-lg hidden hover:bg-green-700 transition">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </button>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+        
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Cookie consent
+        const cookieConsent = document.getElementById('cookie-consent');
+        const acceptCookies = document.getElementById('accept-cookies');
+        const declineCookies = document.getElementById('decline-cookies');
+        
+        // Check if user has already made a choice
+        if (!localStorage.getItem('cookieConsent')) {
+            cookieConsent.classList.remove('hidden');
+        } else {
+            cookieConsent.classList.add('hidden');
+        }
+        
+        acceptCookies.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'accepted');
+            cookieConsent.classList.add('hidden');
+        });
+        
+        declineCookies.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'declined');
+            cookieConsent.classList.add('hidden');
+        });
+        
+        // Booking modal
+        const bookingModal = document.getElementById('booking-modal');
+        const closeModal = document.getElementById('close-modal');
+        const reservationButtons = document.querySelectorAll('a[href="#contact"]');
+        
+        reservationButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                if (button.textContent.trim() === 'Réserver') {
+                    e.preventDefault();
+                    bookingModal.classList.remove('hidden');
+                }
+            });
+        });
+        
+        closeModal.addEventListener('click', () => {
+            bookingModal.classList.add('hidden');
+        });
+        
+        // Close modal when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target === bookingModal) {
+                bookingModal.classList.add('hidden');
+            }
+        });
+        
+        // Form submission
+        const contactForm = document.getElementById('contact-form');
+        const bookingForm = document.getElementById('booking-form');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Merci pour votre message ! Nous vous contacterons très prochainement.');
+            contactForm.reset();
+        });
+        
+        bookingForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Merci pour votre demande de réservation ! Nous vérifierons la disponibilité et vous contacterons dans les plus brefs délais.');
+            bookingForm.reset();
+            bookingModal.classList.add('hidden');
+        });
+        
+        // View more photos button
+        const viewMoreButton = document.getElementById('view-more');
+        
+        viewMoreButton.addEventListener('click', () => {
+            alert('Plus de photos seront disponibles prochainement !');
+        });
+        
+        // Set minimum date for date inputs to today
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('arrival').min = today;
+        document.getElementById('departure').min = today;
+        document.getElementById('modal-arrival').min = today;
+        document.getElementById('modal-departure').min = today;
+        
+        // Update departure min date when arrival is selected
+        document.getElementById('arrival').addEventListener('change', function() {
+            document.getElementById('departure').min = this.value;
+        });
+        
+        document.getElementById('modal-arrival').addEventListener('change', function() {
+            document.getElementById('modal-departure').min = this.value;
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9525aacf8100d114',t:'MTc1MDM2Mzc5OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
+
